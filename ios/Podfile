@@ -28,6 +28,10 @@ end
 target 'RNFirebaseSkia' do
   config = use_native_modules!
 
+  # Required for RNFirebase
+  use_frameworks! :linkage => :static
+  $RNFirebaseAsStaticFramework = true
+
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.
